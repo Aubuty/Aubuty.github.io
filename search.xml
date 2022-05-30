@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Android页面跳转</title>
+      <link href="/2022/05/31/Android%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/"/>
+      <url>/2022/05/31/Android%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安卓"><a href="#安卓" class="headerlink" title="安卓"></a>安卓</h1><h2 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(上下文,需要跳转的页面);</span><br><span class="line"><span class="number">1</span>、<span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(getApplicationContext(),DataActivity.class);</span><br><span class="line"><span class="number">2</span>、<span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(<span class="built_in">this</span>,DataActivity.class);</span><br><span class="line"></span><br><span class="line">startActivity(intent);<span class="comment">//跳转语句</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="清除当前窗体"><a href="#清除当前窗体" class="headerlink" title="清除当前窗体"></a>清除当前窗体</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">finish();</span><br><span class="line">释放内存</span><br></pre></td></tr></table></figure><h2 id="信息传递"><a href="#信息传递" class="headerlink" title="信息传递"></a>信息传递</h2><h3 id="存放要传递的信息"><a href="#存放要传递的信息" class="headerlink" title="存放要传递的信息"></a>存放要传递的信息</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Bundle</span> <span class="variable">bundle</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bundle</span>(); <span class="comment">//新建Bundle对象 ，用于存放数据</span></span><br><span class="line">bundle.putSerializable(<span class="string">&quot;名字&quot;</span>,数据);<span class="comment">// 向Bundle对象添加序列数据 Json</span></span><br><span class="line"></span><br><span class="line">bundle.putSerializable(<span class="string">&quot;BaseResponseEntity&quot;</span>,response);</span><br><span class="line">bundle.putString(<span class="string">&quot;baseUrl&quot;</span>,baseUrl);<span class="comment">//向Bundle对象添加字符串数据</span></span><br><span class="line">intent.putExtra(bundle); <span class="comment">//将Bundle 对象放入Intent对象</span></span><br></pre></td></tr></table></figure><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">intent.putExtra(<span class="string">&quot;名字&quot;</span>,内容);</span><br><span class="line">intent.putString(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;Alex&quot;</span>);</span><br></pre></td></tr></table></figure><h3 id="取出信息"><a href="#取出信息" class="headerlink" title="取出信息"></a>取出信息</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getIntent().getSerializableExtra(<span class="string">&quot;名字&quot;</span>);</span><br><span class="line"></span><br><span class="line">userbaseResponseEntity = (BaseResponseEntity) getIntent().getSerializableExtra(<span class="string">&quot;BaseResponseEntity&quot;</span>);<span class="comment">//在Intent对象中取出名字为&quot;BaseResponseEntity&quot;的序列对象 转换类型为BaseResponseEntity</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安卓 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Intent </tag>
+            
+            <tag> Bundle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android新大陆云平台API使用</title>
       <link href="/2022/05/31/Android%E6%96%B0%E5%A4%A7%E9%99%86%E4%BA%91%E5%B9%B3%E5%8F%B0API%E4%BD%BF%E7%94%A8/"/>
       <url>/2022/05/31/Android%E6%96%B0%E5%A4%A7%E9%99%86%E4%BA%91%E5%B9%B3%E5%8F%B0API%E4%BD%BF%E7%94%A8/</url>
@@ -22,9 +49,9 @@
       
         <tags>
             
-            <tag> api </tag>
-            
             <tag> 新大陆 </tag>
+            
+            <tag> api </tag>
             
         </tags>
       
