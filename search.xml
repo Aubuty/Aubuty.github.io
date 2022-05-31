@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>斐波那契数列</title>
+      <link href="/2022/05/31/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"/>
+      <url>/2022/05/31/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h1><p><strong>定义</strong></p><pre><code>斐波那契数列指的是这样一个数列 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233，377，610，987，1597，2584，4181，6765，10946，17711，28657，46368........这个数列从第3项开始，每一项都等于前两项之和.</code></pre><p><strong>公式</strong><br>$$<br>a_n&#x3D;a_{(n-1)}+a_{(n-2)}<br>$$</p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> <span class="built_in">array</span>[<span class="number">40</span>];</span><br><span class="line">    <span class="type">int</span> arraysize = <span class="keyword">sizeof</span>(<span class="built_in">array</span>)/<span class="keyword">sizeof</span>(<span class="built_in">array</span>[<span class="number">0</span>]) ;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">array</span>[<span class="number">0</span>] = <span class="number">1</span> ;</span><br><span class="line">    <span class="built_in">array</span>[<span class="number">1</span>]=<span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">2</span>;i&lt;arraysize;i++)&#123;</span><br><span class="line">        <span class="built_in">array</span>[i]=<span class="built_in">array</span>[i<span class="number">-1</span>]+<span class="built_in">array</span>[i<span class="number">-2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">size_t</span> j = <span class="number">0</span>; j &lt; arraysize; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d  &quot;</span>,<span class="built_in">array</span>[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> 斐波那契数列 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>冒泡排序</title>
+      <link href="/2022/05/31/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
+      <url>/2022/05/31/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>冒泡排序（Bubble Sort）也是一种简单直观的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢”浮”到数列的顶端。</p><h2 id="算法实现过程"><a href="#算法实现过程" class="headerlink" title="算法实现过程"></a>算法实现过程</h2><ol><li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li><li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li><li>针对所有的元素重复以上的步骤，除了最后一个。</li><li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。<blockquote><p>人类语言：😜从第一个开始依次比较相邻的两个元素 如果后面的数字小于前面的 交换两数的位置，在使用交换后的数据比较，直到最后一个。每次把最大的数字放到后面。</p></blockquote><h3 id="图片演示"><a href="#图片演示" class="headerlink" title="图片演示"></a>图片演示</h3><p><img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="动态图片" title="动态显示"></p></li></ol><p>每次确定一位最大的数字。每次循环次数比上一次少一位</p><blockquote><p>如果一个数组长度是5 <strong>长度记为 len</strong><br>则比较轮数就是 <strong>数组长度减一</strong> 记作 <strong>i &lt; len -1</strong><br>每次的轮数记为 <strong>j &lt; len-i-1</strong></p></blockquote><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//冒泡排序</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> <span class="built_in">array</span>[<span class="number">5</span>]; <span class="comment">//声明数组</span></span><br><span class="line">    <span class="type">int</span> len = <span class="keyword">sizeof</span>(<span class="built_in">array</span>)/<span class="keyword">sizeof</span>(<span class="built_in">array</span>[<span class="number">0</span>]);<span class="comment">//计算数组的长度</span></span><br><span class="line">    <span class="type">int</span> cnt;<span class="comment">//定义交换变量</span></span><br><span class="line">    <span class="type">int</span> i,j;<span class="comment">//定义循环变量</span></span><br><span class="line">    <span class="keyword">for</span>( i =<span class="number">0</span> ; i&lt;len;i++)&#123; <span class="comment">//数组初始化</span></span><br><span class="line">        <span class="type">int</span> a = rand() % <span class="number">100</span> ;<span class="comment">//随机数 0~100</span></span><br><span class="line">        <span class="built_in">array</span>[i] = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d  &quot;</span>,<span class="built_in">array</span>[i]); <span class="comment">// 输出原始数据</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (  i = <span class="number">0</span>; i &lt; len<span class="number">-1</span>; i++)&#123;  <span class="comment">//外侧i 控制比较轮数 数组长度-1</span></span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len<span class="number">-1</span>-i; j++)&#123; <span class="comment">//每次的比较次数</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">array</span>[j] &gt; <span class="built_in">array</span>[j+<span class="number">1</span>])&#123; <span class="comment">//相邻的两个数比较大小</span></span><br><span class="line">                cnt =  <span class="built_in">array</span>[j];</span><br><span class="line">                <span class="built_in">array</span>[j] = <span class="built_in">array</span>[j+<span class="number">1</span>]; <span class="comment">// 交换两个为主的数据</span></span><br><span class="line">                <span class="built_in">array</span>[j+<span class="number">1</span>] = cnt;</span><br><span class="line">                <span class="comment">/* code */</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d  &quot;</span>,<span class="built_in">array</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> 冒泡排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>选择排序</title>
+      <link href="/2022/05/31/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"/>
+      <url>/2022/05/31/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p>选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p><h2 id="算法实现过程"><a href="#算法实现过程" class="headerlink" title="算法实现过程"></a>算法实现过程</h2><ol><li>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。</li><li>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</li><li>重复第二步，直到所有元素均排序完毕。<blockquote><p>人类语言：😜从第一个开始依次比较后面所有位置的数据。每次确定一个位置的数据</p></blockquote><h3 id="图片演示"><a href="#图片演示" class="headerlink" title="图片演示"></a>图片演示</h3><blockquote><p>图片来自菜鸟教程。<br><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="动态图片" title="动态显示"><br>每次确定一位的数字。每次循环次数比上一次少一位<br>如果一个数组长度是5 <strong>长度记为 len</strong><br>则比较轮数就是 <strong>数组长度减一</strong> 记作 <strong>i &#x3D; 0; i &lt; len-1; i++</strong><br>后面位数据的位置记为 <strong>j &#x3D; i+1 ; j &lt; len;j++</strong></p></blockquote><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//冒泡排序</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> <span class="built_in">array</span>[<span class="number">5</span>]; <span class="comment">//声明数组</span></span><br><span class="line">    <span class="type">int</span> len = <span class="keyword">sizeof</span>(<span class="built_in">array</span>)/<span class="keyword">sizeof</span>(<span class="built_in">array</span>[<span class="number">0</span>]);<span class="comment">//计算数组的长度</span></span><br><span class="line">    <span class="type">int</span> cnt;<span class="comment">//定义交换变量</span></span><br><span class="line">    <span class="type">int</span> i,j;<span class="comment">//定义循环变量</span></span><br><span class="line">    <span class="keyword">for</span>( i =<span class="number">0</span> ; i&lt;len;i++)&#123; <span class="comment">//数组初始化</span></span><br><span class="line">        <span class="type">int</span> a = rand() % <span class="number">100</span> ;<span class="comment">//随机数 0~100</span></span><br><span class="line">        <span class="built_in">array</span>[i] = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d  &quot;</span>,<span class="built_in">array</span>[i]); <span class="comment">// 输出原始数据</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">     <span class="keyword">for</span> (  i = <span class="number">0</span>; i &lt; len<span class="number">-1</span>; i++)&#123; <span class="comment">//外侧的一个数据</span></span><br><span class="line">        <span class="keyword">for</span> (j = i+<span class="number">1</span>; j &lt; len; j++)&#123;<span class="comment">//后面的每一个位置的数据</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">array</span>[i] &gt; <span class="built_in">array</span>[j])&#123;</span><br><span class="line">                cnt =  <span class="built_in">array</span>[j];</span><br><span class="line">                <span class="built_in">array</span>[j] = <span class="built_in">array</span>[i];<span class="comment">//交换数据</span></span><br><span class="line">                <span class="built_in">array</span>[i] = cnt;</span><br><span class="line">                <span class="comment">/* code */</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d  &quot;</span>,<span class="built_in">array</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> 选择排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux vim的使用</title>
       <link href="/2022/05/31/Linux-vim%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
       <url>/2022/05/31/Linux-vim%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
