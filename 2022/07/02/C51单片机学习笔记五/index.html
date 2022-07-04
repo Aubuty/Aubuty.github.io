@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>C51单片机学习笔记五 | 小刘同学</title><meta name="keywords" content="单片机,蓝牙,wifi"><meta name="author" content="小刘同学"><meta name="copyright" content="小刘同学"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="蓝牙与wifi模块蓝牙蓝牙模块，又叫做蓝牙串口模块 串口透传技术  透传即透明传送，是指在数据的传输过程中，通过无线的方式这组数据不发生任何形式的改变，仿佛传输过程是透明的一样，同时保证传输的质量，原封不动地到了最终接收者手里。  以太网，蓝牙，Zigbee, GPRS 等模块玩法一样，对嵌入式程序员来说，不需要关心通讯模块内部数据 及协议栈工作原理，只要通过串口编程获得数据即可 接线   串口交">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C51单片机学习笔记五">
+<meta property="og:url" content="https://aubuty.top/2022/07/02/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/index.html">
+<meta property="og:site_name" content="小刘同学">
+<meta property="og:description" content="蓝牙与wifi模块蓝牙蓝牙模块，又叫做蓝牙串口模块 串口透传技术  透传即透明传送，是指在数据的传输过程中，通过无线的方式这组数据不发生任何形式的改变，仿佛传输过程是透明的一样，同时保证传输的质量，原封不动地到了最终接收者手里。  以太网，蓝牙，Zigbee, GPRS 等模块玩法一样，对嵌入式程序员来说，不需要关心通讯模块内部数据 及协议栈工作原理，只要通过串口编程获得数据即可 接线   串口交">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://aubuty.top/img/A7.png">
+<meta property="article:published_time" content="2022-07-02T10:02:30.000Z">
+<meta property="article:modified_time" content="2022-07-03T15:13:30.000Z">
+<meta property="article:author" content="小刘同学">
+<meta property="article:tag" content="单片机">
+<meta property="article:tag" content="蓝牙">
+<meta property="article:tag" content="wifi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aubuty.top/img/A7.png"><link rel="shortcut icon" href="/img/favucin.png"><link rel="canonical" href="https://aubuty.top/2022/07/02/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C51单片机学习笔记五',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-03 23:13:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/A7.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小刘同学</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C51单片机学习笔记五</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-02T10:02:30.000Z" title="发表于 2022-07-02 18:02:30">2022-07-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-03T15:13:30.000Z" title="更新于 2022-07-03 23:13:30">2022-07-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">619</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/07/02/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2022/07/02/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="蓝牙与wifi模块"><a href="#蓝牙与wifi模块" class="headerlink" title="蓝牙与wifi模块"></a>蓝牙与wifi模块</h1><h2 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h2><p>蓝牙模块，又叫做蓝牙串口模块</p>
+<p>串口透传技术</p>
+<blockquote>
+<p>透传即透明传送，是指在数据的传输过程中，通过无线的方式这组数据不发生任何形式的改变，仿佛传输过程是透明的一样，同时保证传输的质量，原封不动地到了最终接收者手里。</p>
+</blockquote>
+<p>以太网，蓝牙，Zigbee, GPRS 等模块玩法一样，对嵌入式程序员来说，不需要关心通讯模块内部数据</p>
+<p>及协议栈工作原理，只要通过串口编程获得数据即可</p>
+<p>接线 </p>
+<blockquote>
+<p>串口交叉相连</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">单片机</th>
+<th align="center">蓝牙模块</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">RX</td>
+<td align="center">TX</td>
+</tr>
+<tr>
+<td align="center">TX</td>
+<td align="center">RX</td>
+</tr>
+<tr>
+<td align="center">VCC</td>
+<td align="center">VCC</td>
+</tr>
+<tr>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+</tbody></table>
+<h2 id="Wifi模块ESP-01s"><a href="#Wifi模块ESP-01s" class="headerlink" title="Wifi模块ESP-01s"></a>Wifi模块<strong>ESP-01s</strong></h2><h3 id="AT-指令"><a href="#AT-指令" class="headerlink" title="AT****指令"></a><strong>AT****指令</strong></h3><blockquote>
+<p>AT指令集是从终端设备（Terminal Equipment，TE)或数据终端设备（Data TerminalEquipment，DTE)向终端适配器(Terminal Adapter，TA)或数据电路终端设备(Data CircuitTerminal Equipment，DCE)发送的。</p>
+<p>其对所传输的数据包大小有定义：即对于AT指令的发送，除AT两个字符外，最多可以接收1056个字符的长度（包括最后的空字符）。</p>
+<p>每个AT命令行中只能包含一条AT指令；对于由终端设备主动向PC端报告的URC指示或者response响应，也要求一行最多有一个，不允许上报的一行中有多条指示或者响应。AT指令以回车作为结尾，响应或上报以回车换行为结尾。</p>
+</blockquote>
+<p>ESP-01s出厂波特率正常是115200, 注意：AT指令，控制类都要加回车，数据传输时不加回车</p>
+<ul>
+<li>上电后，通过串口输出一串系统开机信息，购买的部分模块可能电压不稳，导致乱码，以 ready 为 准</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">################################################ </span><br><span class="line">arch:ESP8266, 1 </span><br><span class="line">compile_time:Ai-Thinker|B&amp;T </span><br><span class="line">wifi_mac:4c75250dAE2F </span><br><span class="line">sdk_version:v3.4-22-g967752e2 </span><br><span class="line">firmware_version:2.2.0 </span><br><span class="line">compile_time:Jun 30 </span><br><span class="line">2021 11:28:20 ready </span><br><span class="line">################################################</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上电后发送AT指令测试通信及模块功能是否正常</li>
+</ul>
+<blockquote>
+<p>发送AT</p>
+<p>返回OK 就没问题了</p>
+</blockquote>
+<ul>
+<li>通过一下命令配置成9600波特率</li>
+</ul>
+<blockquote>
+<p>AT+UART&#x3D;9600,8,1,0,0 </p>
+</blockquote>
+<h3 id="入网设置"><a href="#入网设置" class="headerlink" title="入网设置"></a><strong>入网设置</strong></h3><ul>
+<li>设置工作模式</li>
+</ul>
+<blockquote>
+<p>AT+CWMODE&#x3D;3 &#x2F;&#x2F;1. 是station（设备）模式 2.是AP（路由）模式 3.是双模</p>
+<p>OK </p>
+</blockquote>
+<ul>
+<li>以设备模式接入家中路由器配置</li>
+</ul>
+<blockquote>
+<p>AT+CWJAP&#x3D;”wifi名字”,”wifi密码” &#x2F;&#x2F;指令    </p>
+<p>WIFI CONNECTED &#x2F;&#x2F;结果 </p>
+<p>WIFI GOT IP &#x2F;&#x2F;结果 </p>
+</blockquote>
+<blockquote>
+<p>这里 连接wifi的时候 只能连接2.4G的wifi 5Gwifi不支持</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://aubuty.top">小刘同学</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://aubuty.top/2022/07/02/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/">https://aubuty.top/2022/07/02/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://aubuty.top" target="_blank">小刘同学</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a><a class="post-meta__tags" href="/tags/%E8%93%9D%E7%89%99/">蓝牙</a><a class="post-meta__tags" href="/tags/wifi/">wifi</a></div><div class="post_share"><div class="social-share" data-image="/img/A7.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/06/30/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/"><img class="next-cover" src="/img/loading.gif" data-original="/img/A9.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">单片机学习笔记四</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/06/29/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/" title="C51单片机学习笔记三"><img class="cover" src="/img/loading.gif" data-original="/img/A10.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-29</div><div class="title">C51单片机学习笔记三</div></div></a></div><div><a href="/2022/06/30/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/" title="单片机学习笔记四"><img class="cover" src="/img/loading.gif" data-original="/img/A9.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-30</div><div class="title">单片机学习笔记四</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小刘同学</div><div class="author-info__description">一分耕耘一分收获</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/aubuty"><i class="fab fa-github"></i><span>gitee</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Aubuty" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2622220478@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_44825347?type=blog" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">富强-民主-文明-和谐</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%93%9D%E7%89%99%E4%B8%8Ewifi%E6%A8%A1%E5%9D%97"><span class="toc-number">1.</span> <span class="toc-text">蓝牙与wifi模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%93%9D%E7%89%99"><span class="toc-number">1.1.</span> <span class="toc-text">蓝牙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wifi%E6%A8%A1%E5%9D%97ESP-01s"><span class="toc-number">1.2.</span> <span class="toc-text">Wifi模块ESP-01s</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AT-%E6%8C%87%E4%BB%A4"><span class="toc-number">1.2.1.</span> <span class="toc-text">AT****指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A5%E7%BD%91%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.2.</span> <span class="toc-text">入网设置</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/02/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/" title="C51单片机学习笔记五"><img src="/img/loading.gif" data-original="/img/A7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C51单片机学习笔记五"/></a><div class="content"><a class="title" href="/2022/07/02/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/" title="C51单片机学习笔记五">C51单片机学习笔记五</a><time datetime="2022-07-02T10:02:30.000Z" title="发表于 2022-07-02 18:02:30">2022-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/30/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/" title="单片机学习笔记四"><img src="/img/loading.gif" data-original="/img/A9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单片机学习笔记四"/></a><div class="content"><a class="title" href="/2022/06/30/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/" title="单片机学习笔记四">单片机学习笔记四</a><time datetime="2022-06-30T08:05:47.000Z" title="发表于 2022-06-30 16:05:47">2022-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/29/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/" title="C51单片机学习笔记三"><img src="/img/loading.gif" data-original="/img/A10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C51单片机学习笔记三"/></a><div class="content"><a class="title" href="/2022/06/29/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/" title="C51单片机学习笔记三">C51单片机学习笔记三</a><time datetime="2022-06-29T15:20:29.000Z" title="发表于 2022-06-29 23:20:29">2022-06-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/28/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" title="C51单片机学习笔记二"><img src="/img/loading.gif" data-original="/img/a4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C51单片机学习笔记二"/></a><div class="content"><a class="title" href="/2022/06/28/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" title="C51单片机学习笔记二">C51单片机学习笔记二</a><time datetime="2022-06-28T09:59:33.000Z" title="发表于 2022-06-28 17:59:33">2022-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/28/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/" title="C51单片机学习笔记一"><img src="/img/loading.gif" data-original="/img/A8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C51单片机学习笔记一"/></a><div class="content"><a class="title" href="/2022/06/28/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/" title="C51单片机学习笔记一">C51单片机学习笔记一</a><time datetime="2022-06-28T09:41:46.000Z" title="发表于 2022-06-28 17:41:46">2022-06-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 小刘同学</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'iRIULjmBrJEqbuztYYKlkuNG-gzGzoHsz',
+      appKey: '0e5cQb6E1EIlA1iMNX0tWCnS',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
