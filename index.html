@@ -1,207 +1,462 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>小刘同学</title><meta name="author" content="Aubuty"><meta name="copyright" content="Aubuty"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="比你优秀的人都在学习,你怎么可以停下">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小刘同学">
 <meta property="og:url" content="https://github.com/Aubuty/Aubuty.github.io.git/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="小刘同学">
+<meta property="og:description" content="比你优秀的人都在学习,你怎么可以停下">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Aubuty">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/Aubuty/Aubuty.github.io.git/img/favicon.png"><link rel="canonical" href="https://github.com/Aubuty/Aubuty.github.io.git/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Aubuty/Aubuty.github.io.git/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Aubuty/Aubuty.github.io.git/',
+  algolia: undefined,
+  localSearch: {"path":"/Aubuty/Aubuty.github.io.git/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '小刘同学',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-04-18 20:03:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/Aubuty/Aubuty.github.io.git/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
-    <link rel="shortcut icon" href="/Aubuty/Aubuty.github.io.git/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/Aubuty/Aubuty.github.io.git/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/Aubuty/Aubuty.github.io.git/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/Aubuty/Aubuty.github.io.git/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/Aubuty/Aubuty.github.io.git/">Home</a>
-        
-          <a class="main-nav-link" href="/Aubuty/Aubuty.github.io.git/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/Aubuty/Aubuty.github.io.git/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/Aubuty/Aubuty.github.io.git"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/Aubuty/Aubuty.github.io.git/2023/04/18/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-04-18T10:53:14.362Z" itemprop="datePublished">2023-04-18</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/Aubuty/Aubuty.github.io.git/2023/04/18/hello-world/">Hello World</a>
-    </h1>
-  
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Aubuty/Aubuty.github.io.git/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/Aubuty/Aubuty.github.io.git/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/Aubuty/Aubuty.github.io.git/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Aubuty/Aubuty.github.io.git/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Aubuty/Aubuty.github.io.git/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/Aubuty/Aubuty.github.io.git/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/Aubuty/Aubuty.github.io.git/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/Aubuty/Aubuty.github.io.git/" title="小刘同学"><span class="site-name">小刘同学</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Aubuty/Aubuty.github.io.git/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Aubuty/Aubuty.github.io.git/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Aubuty/Aubuty.github.io.git/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/Aubuty/Aubuty.github.io.git/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/Aubuty/Aubuty.github.io.git/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">小刘同学</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Aubuty" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_44825347?spm=1000.2115.3001.5343" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="mailto:262220478@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2023/01/09/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/" title="STM32学习笔记五">STM32学习笔记五</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-09T13:36:19.000Z" title="发表于 2023-01-09 21:36:19">2023-01-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/STM32/">STM32</a></span></div><div class="content">STM32 DMA简介DMA的概念​	直接存储器访问 (DMA) ：用于在外设与存储器之间以及存储器与存储器之间进行高速数据传输。DMA传输过程的初始化和启动由CPU完成，传输过程由DMA控制器来执行，无需CPU参与，从而节省CPU资源，提高利用率。
+DMA数据传输的四个要素：
+传输源 ：DMA数据传输的来源
+传输目标：DMA数据传输的目的
+传输数量：DMA传输数据的数量
+触发信号：启动一次DMA数据传输的动作
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+​	DMA在很多情况下都能够帮助提高系统的性能，尤其是在处理大量数据传输时。它可以用来传输数据到&#x2F;从外设，例如ADC、DAC、SPI和UART等，也可以用来进行内存间的数据传输。
+DMA传输方式
+外设到内存
+内存到外设
+内存到内存
+外设到外设
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+DMA的循环模式和正常模式​	BDMA主要有两种模式，一个是Normal正常模式，传输一次后就停止传输；另一种是Circular循环模式，会一直循环的传输下去，即使有DMA中断，传输也是一直在进行的。
+这两种模式各有用途。
+Normal正常模式​	适合用于单次传输，比如存储器到存储器的数据复制粘贴，又比如串口的数据单次发送， ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2023/01/07/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/" title="STM32学习笔记四">STM32学习笔记四</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-07T10:45:36.000Z" title="发表于 2023-01-07 18:45:36">2023-01-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/STM32/">STM32</a></span></div><div class="content">STM32 学习笔记 串口简介计算机通信的概念​	将计算机技术和通信技术相结合，完成计算机与外部设备或计算机与计算机之间的信息交换。按照数据传输方式的不同，可以分为串行通信和并行通信两类
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+ 
+串行通信：数据逐位传输
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/Aubuty/Aubuty.github.io.git/2023/04/18/hello-world/" data-id="clgm6ac4o000058c25x0884vj" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+ 
+并行通信：多位数据同时传输
 
 
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Aubuty/Aubuty.github.io.git/archives/2023/04/">April 2023</a></li></ul>
-    </div>
-  </div>
+并行通信的特点
+多位数据同时传输，传输控制简单，传输速度快，但是在长距离传输时硬件成本较高。
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/Aubuty/Aubuty.github.io.git/2023/04/18/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/Aubuty/Aubuty.github.io.git/" class="mobile-nav-link">Home</a>
-  
-    <a href="/Aubuty/Aubuty.github.io.git/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+串行通信的特点
+数据逐位传输，传输线少，长距离传输时成本低，但数据的传输控制较复杂。按照实现数据同步的方式，可以分为同步串行和异步串行两种。
 
 
-<script src="/Aubuty/Aubuty.github.io.git/js/jquery-3.4.1.min.js"></script>
+同步串行通信的特点
+数据传输以数据块（一组字符）为单位，在一个数据块内，字符与字符间无间隔，收发双方依靠独立的时钟线进行信号的同步.适用于大批量的数据传输。
+
+
+异步串行通信的特点
+数据传输以单个字符为单位，字符和字符之间的间隙任意，字符内部每一位持续的时间相同。收发双方没有专门的时钟信号，而是依靠事先约定的字符格式和通信速率来完成通信。
+
+
+异步串行通信的字符格式
+常用字符格式：1位起始位 8位数据位 无奇偶校验 1位停止位
+
+
+异步串行通信的通信速率波特率​	每秒钟传送二进制数码的位数，以b ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2022/12/27/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/" title="STM32学习笔记三">STM32学习笔记三</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-27T03:19:13.000Z" title="发表于 2022-12-27 11:19:13">2022-12-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/STM32/">STM32</a></span></div><div class="content">STM32定时器简介STM32的定时器可用于不同的目的，包括生成PWM信号、测量时间间隔、生成中断和控制外设等。它有几种不同类型的定时器，包括通用定时器、高级控制定时器、低功耗定时器和系统滴答定时器。
+​	定时器是对周期固定的脉冲信号进行计数，如MCU内部的外设时钟(APB)。
+​	计数器是对周期不确定的脉冲信号进行计数，如MCU的I&#x2F;O引脚所引入的外部脉冲信号。
+​	结论：定时器和计数器本质上都是计数器，定时器是计数器的一种特例。
+定时器分类
+
+
+种类
+功能
 
 
 
-  
-<script src="/Aubuty/Aubuty.github.io.git/fancybox/jquery.fancybox.min.js"></script>
+基本定时器
+几乎没有任何输入&#x2F;输出通道，常用作时基，实现基本的定时&#x2F;计数功能
+
+
+通用定时器
+具备多路独立的捕获和比较通道，可以完成定时计数、输入捕获、输出比较等功能
+
+
+高级定时器
+除具备通用定时器的功能外，还具备带死区控制的互补信号输出、紧急刹车关断输入等功能，可用于电机控制和数字电源设计
+
+
+定时器的时钟频率外设总线挂在TIM外设
 
 
 
 
-<script src="/Aubuty/Aubuty.github.io.git/js/script.js"></script>
+外设总线时钟APB1-AHB1
+外设总线时钟APB2-AHB2
 
 
 
 
+LPTIM1（低功耗定时器）
 
-  </div>
-</body>
-</html>
+
+
+基本定时器
+TIM6-TIM7
+
+
+
+通用 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2022/12/19/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" title="STM32学习笔记二">STM32学习笔记二</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-19T12:27:16.000Z" title="发表于 2022-12-19 20:27:16">2022-12-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/STM32/">STM32</a></span></div><div class="content">STM32 中断上节补充：头文件、数据类型及函数声明的添加位置
+变量及函数的命名规则见名知意：利用英文单词或者其缩写形式定义变量或函数，名称要体现变量的作用或函数的功能，切记不要使用拼音来命名。
+2. 变量一般采用名词形式命名，多个单词间利用大小写字母作为间隔。全局变量的首字母大写，如KeyFlag；局部变量的首字母小写，如keyFlag，便于区分全局变量和局部变量。
+3. 函数一般采用动宾结构命名，首字母大写，也是利用大小写字母作为间隔，如GetValue等。
+4. 宏定义和用户自定义数据类型全部采用大写字母，利用下划线作为间隔，如KEY_STATE等。
+简介什么是中断​	STM32中断是一种电子设备中的功能，它允许设备在执行主程序时暂停执行，以便处理来自外部设备或系统事件的信息。中断是通过向设备发送特殊的信号（称为中断请求）来触发的，该信号会使设备暂停当前的执行流程，转而执行一段特定的代码，称为中断服务程序（ISR）。在中断服务程序执行完毕后，设备会返回到原来的执行流程。
+
+
+在STM32H750芯片中，你可以使用以下中断源：
+
+外部中断：外部中断可以由芯片的外部中断线触发，支持软 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2022/12/15/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/" title="STM32学习笔记一">STM32学习笔记一</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-15T14:26:04.000Z" title="发表于 2022-12-15 22:26:04">2022-12-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/STM32/">STM32</a></span></div><div class="content">Stm32 单片机学习笔记简介
+
+
+使用芯片型号
+开发环境
+开发方式
+
+
+
+STM32H750VBT6
+CubaMX+CLion
+HAL库
+
+
+CubaMX的开发环境配置 可以参考这篇文章
+
+Clion-STM32cubeMX-搭建舒适的STM32开发环境
+
+​	大家最好要有一些单片机的基础知识比如说51单片机，C语言以及一些数电模电的知识，这样学起来会舒服很多哦！ 
+在这里说一下，为什么不讲标准库： 
+​	首先的话，目前STM32开发方式有以下几种，我整理了一张表格
+
+
+
+开发方式
+优点
+缺点
+建议
+
+
+
+寄存器
+代码效率高
+学习难度大，移植性最低
+了解
+
+
+标准库
+开发流程便简单，开发周期缩短
+代码执行效率稍低，移植性较低
+熟悉
+
+
+HAL库
+上手简单，移植方便
+执行效率稍低
+掌握
+
+
+​	STM32已经应用的非常广泛了，并且在工业开发也具有挺高的地位了，所以我们只需要 学会HAL库就可以完成绝大多数的开发了，并且标准库，早在几年前就不再更新维护了，标准库的话，学习有余力的话可以学学，技多不压身嘛！
+STM32的简介ARM与STM32的关系ARM：Advanced RISC Mac ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2022/08/25/Clion-STM32cubeMX-%E6%90%AD%E5%BB%BA%E8%88%92%E9%80%82%E7%9A%84STM32%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="Clion + STM32cubeMX 搭建舒适的STM32开发环境">Clion + STM32cubeMX 搭建舒适的STM32开发环境</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-25T07:24:03.000Z" title="发表于 2022-08-25 15:24:03">2022-08-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/STM32/">STM32</a></span></div><div class="content">Clion+STM32cubeMX搭建stm32开发环境本篇介绍的内容也是以基于HAL库开发为准的 
+环境及所需工具
+软件环境:
+
+Windows 10
+STM32CubeMX
+Clion-2019
+MinGW
+OpenOCD
+arm-none-eabi-gcc
+
+硬件环境：
+
+STM32F103C6T6 或其他 STM32 开发板
+ST-Link V2 下载器
+
+
+工具安装STM32CubeMX这个正常去官网下载的安装就行了
+
+该软件用于配置时钟频率 gpio初始化等
+
+
+版本号 &lt;&#x3D; 6.3.0 版本过高无法生成 后续文件
+
+STM32CubeMX - STM32Cube initialization code generator - STMicroelectronics
+OpenOCD
+OpenOCDOpenOCD是用于对STM32进行下载仿真的工具，是一个开源软件包，Windows版本下从这里下载，下载好解压到一个目录就行，后面会在Clion中链接这个目录：
+
+MinGW
+Clion需要使用MinGW环境来配置工具链，安装方法如下：首先去MinGW主页下载最新版 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2022/08/15/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%9D/" title="C51单片机学习笔记九">C51单片机学习笔记九</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-15T07:01:20.000Z" title="发表于 2022-08-15 15:01:20">2022-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="content">IIC协议IIC协议概述
+IIC全称Inter-Integrated Circuit (集成电路总线)是由PHILIPS公司在80年代开发的两线式串行总线，用于连接微控制器及其外围设备。IIC属于半双工同步通信方式
+
+特点
+
+简单性和有效性。
+
+由于接口直接在组件之上，因此IIC总线占用的空间非常小，减少了电路板的空间和芯片管脚的数量，降低了互联成本。总线的长度可高达25英尺，并且能够以10Kbps的最大传输速率支持40个组件
+构成
+IIC串行总线一般有两根信号线，一根是双向的数据线SDA，另一根是时钟线SCL，其时钟信号是由主控器件产生。所有接到IIC总线设备上的串行数据SDA都接到总线的SDA上，各设备的时钟线SCL接到总线的SCL上。对于并联在一条总线上的每个IC都有唯一的地址。
+
+IIC协议
+IIC总线在传输数据的过程中一共有三种类型信号，分别为：开始信号、结束信号和应答信号。
+&#x2F;&#x2F;起始位，停止位，数据位，速度
+这些信号中，起始信号是必需的，结束信号和应答信号
+
+起始信号
+
+终止信号
+
+
+
+
+应答信号
+
+发送器每发送一个字节（8个bit），就在时钟脉冲9期间 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2022/07/28/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%AB/" title="C51单片机学习笔记八">C51单片机学习笔记八</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-28T15:06:13.000Z" title="发表于 2022-07-28 23:06:13">2022-07-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="content">4G模块的使用概述产品介绍EC03-DNC是亿佰特推出的LTECAT1数传模块产品，该产品软件功能完善，覆盖绝大多数常规应用场景，EC03-DNC是为实现串口设备与网络服务器,通过网络相互传输数据而开发的产品，该产品是一款带分集接收功能的LTE-FDD&#x2F;LTE-TDD无线通信数传模块，支持LTE-FDD，LTE-TDD网络数据连接，用户只需通过简单的设置，即可实现串口到网络服务器的双向数据透明传输。模块使用2.0mm排针方便客户设备集成，使用5V～18V宽电压供电。支持移动、联通、电信4G卡，通信与LED指示采用兼容电平，默认3.3V可适用5V电平，具有抗干扰能力，能适应使用在一些电磁干扰强的环境当中，比如一些电力行业当中。
+功能特点
+采用最新4GCAT1方案；
+支持数据透明传输，支持TCP、UDP网络协议，支持心跳包、注册包功能最大支持60个字节数；
+支持MQTT协议，支持接入OneNet平台、百度云平台、阿里云平台的MQTT服务；
+支持两路Socket链路同时收发；
+支持ModbusRTU与ModbusTCP自动相互转换；
+支持网络AT指令，可以通过网络，远程配置设备；
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2022/07/21/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%83/" title="C51单片机学习笔记七">C51单片机学习笔记七</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-21T14:54:41.000Z" title="发表于 2022-07-21 22:54:41">2022-07-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="content">DHT11 温湿度模块产品概述
+DHT11数字温湿度传感器是一款含有已校准数字信号输出的温湿度复合传感器，应用领域：暖通
+空调；汽车；消费品；气象站；湿度调节器；除湿器；家电；医疗；自动控制
+
+
+特点
+相对湿度和温度测量
+全部校准，数字输出
+长期稳定性
+超长的信号传输距离：20米
+超低能耗：休眠
+4 引脚安装：可以买封装好的
+完全互换 : 直接出结果，不用转化
+
+接线
+
+
+单片机
+DHT11
+
+
+
+VCC
+VCC
+
+
+GND
+GND
+
+
+P1.1
+DATA
+
+
+数据传送逻辑
+只有一根数据线DATA，上官一号发送序列指令给DHT11模块，模块一次完整的数据传输为40bit,高位先出
+
+数据格式
+8bit湿度整数数据+8bit湿度小数数据+8bi温度整数数据+8bit温度小数数据+8bit校验和
+
+通讯过程时序图
+时序分析a : dht &#x3D; 1b ：dht &#x3D; 0延时30msc： dht &#x3D; 1在60us后读d点，如果d点是低电平（被模块拉低），说明模块存在！
+代码实现1234567891011121314151617181920212223242526272 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Aubuty/Aubuty.github.io.git/2022/07/05/C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%AD/" title="C51单片机学习笔记六">C51单片机学习笔记六</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-05T13:53:52.000Z" title="发表于 2022-07-05 21:53:52">2022-07-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="content">非标协议外设LCD1602显示概述
+LCD1602（Liquid Crystal Display）是一种工业字符型液晶，能够同时显示 16×02 即 32 字符(16列两行) 
+
+
+引脚说明
+
+第 1 脚: VSS 为电源地第 2 脚: VDD 接 5V 正电源第 3 脚: VL 为液晶显示器对比度调整端,接正电源时对比度最弱，接地时对比度最高，对比度过高时会产生“鬼影”，使用时可以通过一个 10K 的电位器调整对比度。第 4 脚：RS 为寄存器选择，高电平时选择数据寄存器、低电平时选择指令寄存器。第 5 脚：R&#x2F;W 为读写信号线，高电平时进行读操作，低电平时进行写操作。当 RS 和 R&#x2F;W 共同为低电平时可以写入指令或者显示地址，当 RS 为低电平 R&#x2F;W 为高电平时可以读忙信号，当 RS 为高电平 R&#x2F;W 为低电平时可以写入数据。第 6 脚：E 端为使能端，当 E 端由高电平跳变成低电平时，液晶模块执行命令。第 7-14 脚：D0～D7 为 8 位双向数据线。第 15 脚：背光源正极。第 16 脚：背光源负极。
+
+接线表
+
+
+LCD1602
+ ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/Aubuty/Aubuty.github.io.git/page/2/#content-inner">2</a><a class="page-number" href="/Aubuty/Aubuty.github.io.git/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/Aubuty/Aubuty.github.io.git/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/Aubuty/Aubuty.github.io.git/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Aubuty</div><div class="author-info__description">比你优秀的人都在学习,你怎么可以停下</div></div><div class="card-info-data site-data is-center"><a href="/Aubuty/Aubuty.github.io.git/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/Aubuty/Aubuty.github.io.git/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/Aubuty/Aubuty.github.io.git/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Aubuty" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_44825347?spm=1000.2115.3001.5343" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="mailto:262220478@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Aubuty/Aubuty.github.io.git/2023/01/09/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/" title="STM32学习笔记五">STM32学习笔记五</a><time datetime="2023-01-09T13:36:19.000Z" title="发表于 2023-01-09 21:36:19">2023-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Aubuty/Aubuty.github.io.git/2023/01/07/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/" title="STM32学习笔记四">STM32学习笔记四</a><time datetime="2023-01-07T10:45:36.000Z" title="发表于 2023-01-07 18:45:36">2023-01-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Aubuty/Aubuty.github.io.git/2022/12/27/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/" title="STM32学习笔记三">STM32学习笔记三</a><time datetime="2022-12-27T03:19:13.000Z" title="发表于 2022-12-27 11:19:13">2022-12-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Aubuty/Aubuty.github.io.git/2022/12/19/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" title="STM32学习笔记二">STM32学习笔记二</a><time datetime="2022-12-19T12:27:16.000Z" title="发表于 2022-12-19 20:27:16">2022-12-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Aubuty/Aubuty.github.io.git/2022/12/15/STM32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/" title="STM32学习笔记一">STM32学习笔记一</a><time datetime="2022-12-15T14:26:04.000Z" title="发表于 2022-12-15 22:26:04">2022-12-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">学习笔记</span><span class="card-category-list-count">24</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/STM32/"><span class="card-category-list-name">STM32</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Aubuty/Aubuty.github.io.git/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%95%E7%89%87%E6%9C%BA/"><span class="card-category-list-name">单片机</span><span class="card-category-list-count">9</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Aubuty/Aubuty.github.io.git/categories/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">3</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/Aubuty/Aubuty.github.io.git/tags/4G%E6%A8%A1%E5%9D%97/" style="font-size: 1.1em; color: #999">4G模块</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E5%AE%9A%E6%97%B6%E5%99%A8/" style="font-size: 1.1em; color: #999">定时器</a> <a href="/Aubuty/Aubuty.github.io.git/tags/STM32H750VBT6/" style="font-size: 1.1em; color: #999">STM32H750VBT6</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E4%B8%B2%E5%8F%A3/" style="font-size: 1.1em; color: #999">串口</a> <a href="/Aubuty/Aubuty.github.io.git/tags/IIC%E5%8D%8F%E8%AE%AE/" style="font-size: 1.1em; color: #999">IIC协议</a> <a href="/Aubuty/Aubuty.github.io.git/tags/LCD1602/" style="font-size: 1.1em; color: #999">LCD1602</a> <a href="/Aubuty/Aubuty.github.io.git/tags/C51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.2em; color: #999da3">C51单片机</a> <a href="/Aubuty/Aubuty.github.io.git/tags/UART/" style="font-size: 1.1em; color: #999">UART</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">冒泡排序</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E5%8D%95%E7%89%87%E6%9C%BA%E9%9D%9E%E6%A0%87%E5%87%86%E5%8D%8F%E8%AE%AE%E5%A4%96%E8%AE%BE/" style="font-size: 1.2em; color: #999da3">单片机非标准协议外设</a> <a href="/Aubuty/Aubuty.github.io.git/tags/C-C/" style="font-size: 1.3em; color: #99a1ac">C/C++</a> <a href="/Aubuty/Aubuty.github.io.git/tags/OLED%E5%B1%8F%E5%B9%95/" style="font-size: 1.1em; color: #999">OLED屏幕</a> <a href="/Aubuty/Aubuty.github.io.git/tags/DMA/" style="font-size: 1.1em; color: #999">DMA</a> <a href="/Aubuty/Aubuty.github.io.git/tags/HAL/" style="font-size: 1.1em; color: #999">HAL</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" style="font-size: 1.1em; color: #999">斐波那契数列</a> <a href="/Aubuty/Aubuty.github.io.git/tags/STM32%E5%AE%9A%E6%97%B6%E5%99%A8/" style="font-size: 1.1em; color: #999">STM32定时器</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E8%93%9D%E7%89%99/" style="font-size: 1.1em; color: #999">蓝牙</a> <a href="/Aubuty/Aubuty.github.io.git/tags/wifi/" style="font-size: 1.1em; color: #999">wifi</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" style="font-size: 1.1em; color: #999">选择排序</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E4%B8%AD%E6%96%AD/" style="font-size: 1.1em; color: #999">中断</a> <a href="/Aubuty/Aubuty.github.io.git/tags/DHT11/" style="font-size: 1.1em; color: #999">DHT11</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" style="font-size: 1.1em; color: #999">环境搭建</a> <a href="/Aubuty/Aubuty.github.io.git/tags/python/" style="font-size: 1.5em; color: #99a9bf">python</a> <a href="/Aubuty/Aubuty.github.io.git/tags/PWM/" style="font-size: 1.1em; color: #999">PWM</a> <a href="/Aubuty/Aubuty.github.io.git/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.4em; color: #99a5b6">单片机</a> <a href="/Aubuty/Aubuty.github.io.git/tags/STM32/" style="font-size: 1.4em; color: #99a5b6">STM32</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Aubuty/Aubuty.github.io.git/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Aubuty/Aubuty.github.io.git/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Aubuty/Aubuty.github.io.git/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Aubuty/Aubuty.github.io.git/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Aubuty/Aubuty.github.io.git/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">13</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Aubuty/Aubuty.github.io.git/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">27</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-04-18T12:03:25.408Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Aubuty</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Aubuty/Aubuty.github.io.git/js/utils.js"></script><script src="/Aubuty/Aubuty.github.io.git/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["你在抱怨什么呢","为明天到来的事，说人生像是没有意义","没有选择会是唯一的路","这不是你自己的问题，人终归要好好去生活"])
+  } else {
+    document.getElementById("subtitle").innerHTML = '你在抱怨什么呢'
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/Aubuty/Aubuty.github.io.git/js/search/local-search.js"></script></div></div></body></html>
