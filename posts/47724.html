@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C51单片机学习笔记八 | 小刘同学</title><meta name="author" content="小刘同学"><meta name="copyright" content="小刘同学"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="4G模块的使用概述产品介绍EC03-DNC是亿佰特推出的LTECAT1数传模块产品，该产品软件功能完善，覆盖绝大多数常规应用场景，EC03-DNC是为实现串口设备与网络服务器,通过网络相互传输数据而开发的产品，该产品是一款带分集接收功能的LTE-FDD&#x2F;LTE-TDD无线通信数传模块，支持LTE-FDD，LTE-TDD网络数据连接，用户只需通过简单的设置，即可实现串口到网络服务器的双向数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C51单片机学习笔记八">
+<meta property="og:url" content="https://aubuty.top/posts/47724.html">
+<meta property="og:site_name" content="小刘同学">
+<meta property="og:description" content="4G模块的使用概述产品介绍EC03-DNC是亿佰特推出的LTECAT1数传模块产品，该产品软件功能完善，覆盖绝大多数常规应用场景，EC03-DNC是为实现串口设备与网络服务器,通过网络相互传输数据而开发的产品，该产品是一款带分集接收功能的LTE-FDD&#x2F;LTE-TDD无线通信数传模块，支持LTE-FDD，LTE-TDD网络数据连接，用户只需通过简单的设置，即可实现串口到网络服务器的双向数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg">
+<meta property="article:published_time" content="2022-07-28T15:06:13.000Z">
+<meta property="article:modified_time" content="2023-04-20T15:38:39.429Z">
+<meta property="article:author" content="小刘同学">
+<meta property="article:tag" content="单片机">
+<meta property="article:tag" content="4G模块">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg"><link rel="shortcut icon" href="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/22.png"><link rel="canonical" href="https://aubuty.top/posts/47724.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C51单片机学习笔记八',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-20 23:38:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/v2-26f75c5243e4b44946d95fb69b49f8c1_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="小刘同学"><span class="site-name">小刘同学</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C51单片机学习笔记八</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-28T15:06:13.000Z" title="发表于 2022-07-28 23:06:13">2022-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-20T15:38:39.429Z" title="更新于 2023-04-20 23:38:39">2023-04-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C51单片机学习笔记八"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="4G模块的使用"><a href="#4G模块的使用" class="headerlink" title="4G模块的使用"></a>4G模块的使用</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="产品介绍"><a href="#产品介绍" class="headerlink" title="产品介绍"></a>产品介绍</h3><p>EC03-DNC是亿佰特推出的LTECAT1数传模块产品，该产品软件功能完善，覆盖绝大多数常规应用场景，EC03-DNC是为实现串口设备与网络服务器,通过网络相互传输数据而开发的产品，该产品是一款带分集接收功能的LTE-FDD&#x2F;LTE-TDD无线通信数传模块，支持LTE-FDD，LTE-TDD网络数据连接，用户只需通过简单的设置，即可实现串口到网络服务器的双向数据透明传输。模块使用2.0mm排针方便客户设备集成，使用5V～18V宽电压供电。支持移动、联通、电信4G卡，通信与LED指示采用兼容电平，默认3.3V可适用5V电平，具有抗干扰能力，能适应使用在一些电磁干扰强的环境当中，比如一些电力行业当中。</p>
+<h3 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h3><ol>
+<li>采用最新4GCAT1方案；</li>
+<li>支持数据透明传输，支持TCP、UDP网络协议，支持心跳包、注册包功能最大支持60个字节数；</li>
+<li>支持MQTT协议，支持接入OneNet平台、百度云平台、阿里云平台的MQTT服务；</li>
+<li>支持两路Socket链路同时收发；</li>
+<li>支持ModbusRTU与ModbusTCP自动相互转换；</li>
+<li>支持网络AT指令，可以通过网络，远程配置设备；</li>
+<li>LTE-FDD：最大下行速率10Mbps，最大上行速率5Mbps；LTE-TDD：最大下行速率7.5Mbps，最大上行速率1Mbps；</li>
+<li>软件看门狗设计，系统稳定。</li>
+<li>支持APN&#x2F;VPN。</li>
+</ol>
+<blockquote>
+<p>有两种工作模式，默认是透传模式，通过其他方式进入AT指令模式，后续有说明</p>
+</blockquote>
+<blockquote>
+<p>注意插卡不要出错，下图红色位置为SIM卡状态灯，亮才是正常</p>
+</blockquote>
+<p><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/img/202207282315729.png" alt="image-20220728231458084"></p>
+<ul>
+<li>软件和用户手册下载地址 <a target="_blank" rel="noopener" href="https://www.ebyte.com/product-view-news.html?id=1102">https://www.ebyte.com/product-view-news.html?id=1102</a></li>
+</ul>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p>​     串口调试助手，网络调试助手，用户手册（AT指令），均可在以上网址中下载到</p>
+<h3 id="进入AT模式"><a href="#进入AT模式" class="headerlink" title="进入AT模式"></a>进入AT模式</h3><blockquote>
+<p>在使用前:</p>
+<p>将电源、天线、SIM 卡、串口线等硬件连接好。</p>
+</blockquote>
+<ol>
+<li><p>进入AT指令模式在串口助手内发送+++(<strong>除了+++不需要勾选发送新行其他AT指令都需要勾选发送新行才有效</strong>)必须在发送+++指令3s内发送其他任意AT指令(除重启AT指令外)才能完全进入AT</p>
+</li>
+<li><p>进入AT指令模式后，使用<code>AT+CPIN</code>查看SIM卡接入情况：</p>
+<p>例如：</p>
+<p> <code>AT+CPIN</code></p>
+<p><code>+OK=1</code></p>
+<p>表示SIM卡已接入，使用AT+CSQ查看当前信号强度：</p>
+<p>例如：</p>
+<p><code>AT+CSQ</code></p>
+<p><code>+OK=26</code>表示当前信号强度正常.  26是信号强度 不是固定的 根据实际情况看</p>
+<p>如果回复99表示当前信号强度异常，请查看当前为天线是否连好，或周围基站存在异常。</p>
+</li>
+<li><p>接入服务器，<code>AT+SOCK=TCPC,116.62.42.192,31687</code>（参数之间使用英文字符逗号隔开，IP指令之间使用英文字符点隔开），如果是SOCK1，SOCK2，SOCK3，需要在前端加使能命令(具体查看AT指令说明部分)。</p>
+<p>SOCK设置</p>
+<p>例如：</p>
+<p><code>AT+SOCK=TCPC,116.62.42.192,31687</code></p>
+<p><code>+OK</code></p>
+<p>SOCK1、SOCK2、SOCK3设置</p>
+<p>例如：</p>
+<p><code>AT+SOCK1=0,TCPC,116.62.42.192,31687</code></p>
+<p><code>+OK</code> 表示设置成功。</p>
+</li>
+<li><p>重启（所有AT指令修改参数后，设备重启后生效）执行指令<code>AT+REBT</code>返回OK后设备立即重启，此处IP只做演示，实际连接以需要连接的服务器IP为基准</p>
+</li>
+</ol>
+<p><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/img/202207282328951.png" alt="image-20220728232806905"></p>
+<blockquote>
+<p>模块还有很多的AT指令 如心跳包内容的设置 心跳包的发送时间，MQTT服务器的设置等等。在官方的文档中有详细介绍。每一个指令都有详细的使用方法的介绍，返回值等。</p>
+</blockquote>
+<p><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/img/202207282351377.png" alt="image-20220728235152338"></p>
+<p><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/img/202207282341466.png" alt="image-20220728234120429"></p>
+<h3 id="连接socket-服务器"><a href="#连接socket-服务器" class="headerlink" title="连接socket 服务器"></a>连接socket 服务器</h3><blockquote>
+<p>因为是4G通信，所以需要用到内网穿透功能，将电脑搭建的socket服务器 映射到公网</p>
+<p>这里我使用的是花生壳内网穿透工具，  </p>
+<blockquote>
+<p>  免费 学习使用和简单的场景足够</p>
+</blockquote>
+</blockquote>
+<h4 id="花生壳"><a href="#花生壳" class="headerlink" title="花生壳"></a>花生壳</h4><ol>
+<li>注册账号 </li>
+<li>下载软件</li>
+</ol>
+<p><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/img/202207282333714.png" alt="屏幕截图 2022-07-28 233329"></p>
+<h4 id="设置一个TCP服务器"><a href="#设置一个TCP服务器" class="headerlink" title="设置一个TCP服务器"></a>设置一个TCP服务器</h4><p><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/img/202207282334926.png" alt="image-20220728233431875"></p>
+<blockquote>
+<p>百度搜索网络调试助手很多</p>
+</blockquote>
+<h4 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h4><p><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/img/202207282335598.png" alt="image-20220728233556556"></p>
+<p>这里的内网主机和内网端口 一定要和网络调试助手的保持一致</p>
+<h4 id="内网穿透测试"><a href="#内网穿透测试" class="headerlink" title="内网穿透测试"></a>内网穿透测试</h4><p><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/img/202207282338221.png" alt="image-20220728233808140"></p>
+<blockquote>
+<p> 通过外网地址访问成功</p>
+</blockquote>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a><strong>代码实现</strong></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对应于课堂代码16文件夹 </span></span><br><span class="line"><span class="comment">//C51通过4g模块连接网络，收到数据包op开灯，收到数据包cl关灯 </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;reg52.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;intrins.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIZE</span></span><br><span class="line"><span class="number">12</span> sfr AUXR = <span class="number">0x8E</span>;</span><br><span class="line">sbit D5 = P3 ^ <span class="number">7</span>;</span><br><span class="line"><span class="type">char</span> cmd[SIZE];</span><br><span class="line"><span class="type">void</span> <span class="title function_">UartInit</span><span class="params">(<span class="type">void</span>)</span> <span class="comment">// 9600bps@11.0592MHz</span></span><br><span class="line">&#123;</span><br><span class="line">    AUXR = <span class="number">0x01</span>;</span><br><span class="line">    SCON = <span class="number">0x50</span>; <span class="comment">//配置串口工作方式1，REN使能接收</span></span><br><span class="line">    TMOD &amp;= <span class="number">0xF0</span>;</span><br><span class="line">    TMOD |= <span class="number">0x20</span>; <span class="comment">//定时器1工作方式位8位自动重装</span></span><br><span class="line">    TH1 = <span class="number">0xFD</span>;</span><br><span class="line">    TL1 = <span class="number">0xFD</span>;</span><br><span class="line">    <span class="comment">// 9600波特率的初值</span></span><br><span class="line">    TR1 = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//启动定时器</span></span><br><span class="line">    EA = <span class="number">1</span>; <span class="comment">//开启总中断</span></span><br><span class="line">    ES = <span class="number">1</span>; <span class="comment">//开启串口中断</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Delay1000ms</span><span class="params">()</span> <span class="comment">//@11.0592MHz</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> i, j, k;</span><br><span class="line">    _nop_();</span><br><span class="line">    i = <span class="number">8</span>;</span><br><span class="line">    j = <span class="number">1</span>;</span><br><span class="line">    k = <span class="number">243</span>;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span> (--k)</span><br><span class="line">                ;</span><br><span class="line">        &#125; <span class="keyword">while</span> (--j);</span><br><span class="line">    &#125; <span class="keyword">while</span> (--i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">sendByte</span><span class="params">(<span class="type">char</span> data_msg)</span></span><br><span class="line">&#123;</span><br><span class="line">    SBUF = data_msg;</span><br><span class="line">    <span class="keyword">while</span> (!TI)</span><br><span class="line">        ;</span><br><span class="line">    TI = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">sendString</span><span class="params">(<span class="type">char</span> *str)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (*str != <span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        sendByte(*str);</span><br><span class="line">        str++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    D5 = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//配置C51串口的通信方式</span></span><br><span class="line">    UartInit();</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Delay1000ms();</span><br><span class="line">        <span class="comment">//往发送缓冲区写入数据，就完成数据的发送</span></span><br><span class="line">        <span class="comment">// sendString(&quot;xiaoliu tongxue shuai\r\n&quot;);</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Uart_Handler</span><span class="params">()</span> interrupt 4</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> i = <span class="number">0</span>; <span class="comment">//静态变量，被初始化一次</span></span><br><span class="line">    <span class="type">char</span> tmp;</span><br><span class="line">    <span class="keyword">if</span> (RI) <span class="comment">//中断处理函数中，对于接收中断的响应</span></span><br><span class="line">    &#123;</span><br><span class="line">        RI = <span class="number">0</span>; <span class="comment">//清除接收中断标志位</span></span><br><span class="line">        tmp = SBUF;</span><br><span class="line">        <span class="keyword">if</span> (tmp == <span class="string">&#x27;:&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            i = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cmd[i++] = tmp;</span><br><span class="line">        <span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">&#x27;:&#x27;</span> &amp;&amp; cmd[<span class="number">1</span>] == <span class="string">&#x27;o&#x27;</span> &amp;&amp; cmd[<span class="number">2</span>] == <span class="string">&#x27;p&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            D5 = <span class="number">0</span>; <span class="comment">//点亮D5</span></span><br><span class="line">            i = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">memset</span>(cmd, <span class="string">&#x27;\0&#x27;</span>, SIZE);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">&#x27;:&#x27;</span> &amp;&amp; cmd[<span class="number">1</span>] == <span class="string">&#x27;c&#x27;</span> &amp;&amp; cmd[<span class="number">2</span>] == <span class="string">&#x27;l&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            D5 = <span class="number">1</span>; <span class="comment">//熄灭D5</span></span><br><span class="line">            i = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">memset</span>(cmd, <span class="string">&#x27;\0&#x27;</span>, SIZE);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">12</span>)</span><br><span class="line">            i = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (TI)</span><br><span class="line">        ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://aubuty.top">小刘同学</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://aubuty.top/posts/47724.html">https://aubuty.top/posts/47724.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://aubuty.top" target="_blank">小刘同学</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a><a class="post-meta__tags" href="/tags/4G%E6%A8%A1%E5%9D%97/">4G模块</a></div><div class="post_share"><div class="social-share" data-image="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/27820.html" title="C51单片机学习笔记九"><img class="cover" src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C51单片机学习笔记九</div></div></a></div><div class="next-post pull-right"><a href="/posts/62509.html" title="C51单片机学习笔记七"><img class="cover" src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C51单片机学习笔记七</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/62509.html" title="C51单片机学习笔记七"><img class="cover" src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-21</div><div class="title">C51单片机学习笔记七</div></div></a></div><div><a href="/posts/62381.html" title="C51单片机学习笔记三"><img class="cover" src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-29</div><div class="title">C51单片机学习笔记三</div></div></a></div><div><a href="/posts/47340.html" title="C51单片机学习笔记六"><img class="cover" src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-05</div><div class="title">C51单片机学习笔记六</div></div></a></div><div><a href="/posts/39532.html" title="C51单片机学习笔记五"><img class="cover" src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-02</div><div class="title">C51单片机学习笔记五</div></div></a></div><div><a href="/posts/28819.html" title="单片机学习笔记四"><img class="cover" src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-30</div><div class="title">单片机学习笔记四</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/v2-26f75c5243e4b44946d95fb69b49f8c1_r.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小刘同学</div><div class="author-info__description">比你优秀的人都在学习,你怎么可以停下</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Aubuty"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/aubuty" target="_blank" title="Gitee"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_44825347?spm=1000.2115.3001.5343" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="mailto:262220478@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">今日事❤️今日毕</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#4G%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">4G模块的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D"><span class="toc-text">产品介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E7%89%B9%E7%82%B9"><span class="toc-text">功能特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8"><span class="toc-text">开始使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7"><span class="toc-text">工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5AT%E6%A8%A1%E5%BC%8F"><span class="toc-text">进入AT模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5socket-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">连接socket 服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%B1%E7%94%9F%E5%A3%B3"><span class="toc-text">花生壳</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AATCP%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">设置一个TCP服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-text">内网穿透</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%B5%8B%E8%AF%95"><span class="toc-text">内网穿透测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/63534.html" title="test"><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="test"/></a><div class="content"><a class="title" href="/posts/63534.html" title="test">test</a><time datetime="2023-04-20T15:34:14.000Z" title="发表于 2023-04-20 23:34:14">2023-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/54921.html" title="STM32学习笔记五"><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32学习笔记五"/></a><div class="content"><a class="title" href="/posts/54921.html" title="STM32学习笔记五">STM32学习笔记五</a><time datetime="2023-01-09T13:36:19.000Z" title="发表于 2023-01-09 21:36:19">2023-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/17024.html" title="STM32学习笔记四"><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32学习笔记四"/></a><div class="content"><a class="title" href="/posts/17024.html" title="STM32学习笔记四">STM32学习笔记四</a><time datetime="2023-01-07T10:45:36.000Z" title="发表于 2023-01-07 18:45:36">2023-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/48968.html" title="STM32学习笔记三"><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32学习笔记三"/></a><div class="content"><a class="title" href="/posts/48968.html" title="STM32学习笔记三">STM32学习笔记三</a><time datetime="2022-12-27T03:19:13.000Z" title="发表于 2022-12-27 11:19:13">2022-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/56457.html" title="STM32学习笔记二"><img src="/img/loading.gif" data-original="https://alex-tyimg.oss-cn-huhehaote.aliyuncs.com/a2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32学习笔记二"/></a><div class="content"><a class="title" href="/posts/56457.html" title="STM32学习笔记二">STM32学习笔记二</a><time datetime="2022-12-19T12:27:16.000Z" title="发表于 2022-12-19 20:27:16">2022-12-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 小刘同学</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="30px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body></html>
